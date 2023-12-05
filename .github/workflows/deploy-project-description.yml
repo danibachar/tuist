@@ -8,7 +8,7 @@ on:
   push:
     # only trigger on branches, not on tags
     branches: 
-      - '*'
+      - '*' 
 
 env:
   GITHUB_ACCESS_TOKEN: ${{ secrets.DEPLOY_GITHUB_ACCESS_TOKEN }}
