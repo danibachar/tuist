@@ -33,15 +33,17 @@ _get_tag() {
 }
 
 tag=$(_get_tag)
+echo "Releasing with tag $tag"
 
 # Cloning ProjectDescription project
-target_repo_url="https://$git_user:$access_token@github.com/$target_repo_name"
-echo "cloning $target_repo_url"
+target_repo_url="https://github.com/$target_repo_name"
+echo "Cloning $target_repo_url"
 git clone $target_repo_url
 repo_name=$(echo "$target_repo_url" | awk -F'/' '{print $(NF-0)}' | sed 's/.git$//')
 cd "$repo_name" || exit
 
-git remote set-url origin target_repo_url
+# git remote set-url origin target_repo_url
+git remote set-url origin https://$git_user:$access_token@github.com/$target_repo_name
 git config --local user.email $git_email
 git config --local user.name $git_user
 
