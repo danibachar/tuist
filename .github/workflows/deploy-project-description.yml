@@ -1,14 +1,8 @@
-# name: Project Description Deployment
-# on:
-#   push:
-#     tags:
-#       - '*'
-
-on: 
+name: Project Description Deployment
+on:
   push:
-    # only trigger on branches, not on tags
-    branches: 
-      - '*' 
+    tags:
+      - '*'
 
 env:
   GITHUB_ACCESS_TOKEN: ${{ secrets.DEPLOY_GITHUB_ACCESS_TOKEN }}
