@@ -13,8 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Deploy new Homebrew formula
-        run:
-          - env
-          - ./make/tasks/tuist/release-project-description.sh
+        run: env
+        run: ./make/tasks/tuist/release-project-description.sh
       # - name: Setup upterm session
       #   uses: lhotari/action-upterm@v1
