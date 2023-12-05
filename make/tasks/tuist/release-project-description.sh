@@ -45,4 +45,6 @@ git remote set-url origin target_repo_url
 git config --local user.email $git_email
 git config --local user.name $git_user
 
-./release.sh tag
+echo "Releasing new version of Project Descriptin with tag=$tag"
+
+./release.sh $tag
