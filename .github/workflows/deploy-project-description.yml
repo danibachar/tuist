@@ -1,0 +1,23 @@
+name: Project Description Deployment
+on:
+  push:
+    tags:
+      - '*'
+
+# on: 
+#   push:
+#     # only trigger on branches, not on tags
+#     branches: 'main'
+
+env:
+  GITHUB_ACCESS_TOKEN: ${{ secrets.DANIEL_GITHUB_ACCESS_TOKEN }}
+  TARGET_REPO_NAME: danibachar/ProjectDescription
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy new Homebrew formula
+        run: ./make/tasks/tuist/release-project-description.sh
+      # - name: Setup upterm session
+      #   uses: lhotari/action-upterm@v1
