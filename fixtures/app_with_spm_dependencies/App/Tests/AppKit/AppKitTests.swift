@@ -1,5 +1,6 @@
 import Nimble
 import Testing
+import Cuckoo
 
 struct AppKitTestingTests {
     @Test func example() {
