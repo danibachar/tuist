@@ -9,7 +9,7 @@ import TuistSupport
 final class DumpService {
     private let manifestLoader: ManifestLoading
 
-    init(manifestLoader: ManifestLoading = CachedManifestLoader()) {
+    init(manifestLoader: ManifestLoading = ManifestLoader()) {
         self.manifestLoader = manifestLoader
     }
 
